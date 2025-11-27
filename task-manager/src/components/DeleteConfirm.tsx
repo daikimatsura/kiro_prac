@@ -92,6 +92,7 @@ export function DeleteConfirm({
             type="button"
             onClick={onConfirm}
             className="px-6 py-2.5 border border-transparent rounded-lg text-white bg-red-600 hover:bg-red-700 font-medium focus:outline-none focus:ring-2 focus:ring-red-500 shadow-lg hover:shadow-xl transition-all"
+            data-testid="confirm-delete"
           >
             削除
           </button>

@@ -7,19 +7,19 @@ test.beforeEach(async ({ page }) => {
   const tasks = [
     {
       title: "Cタスク",
-      assignee: "山田",
+      assignee: "test3",
       dueDate: "2025-12-31",
       priority: "high",
     },
     {
       title: "Aタスク",
-      assignee: "佐藤",
+      assignee: "test1",
       dueDate: "2025-11-30",
       priority: "low",
     },
     {
       title: "Bタスク",
-      assignee: "鈴木",
+      assignee: "test2",
       dueDate: "2025-12-15",
       priority: "medium",
     },
@@ -67,9 +67,9 @@ test("担当者列をクリックすると担当者順にソートされる", as
 
   // タスクが昇順に並んでいることを確認
   const rows = page.locator("tbody tr");
-  await expect(rows.nth(0)).toContainText("佐藤");
-  await expect(rows.nth(1)).toContainText("鈴木");
-  await expect(rows.nth(2)).toContainText("山田");
+  await expect(rows.nth(0)).toContainText("test1");
+  await expect(rows.nth(1)).toContainText("test2");
+  await expect(rows.nth(2)).toContainText("test3");
 });
 
 /**

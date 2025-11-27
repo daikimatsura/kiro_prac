@@ -65,6 +65,22 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* タスク編集モーダル */}
+      <EditModal
+        task={editingTask}
+        isOpen={!!editingTask}
+        onClose={() => setEditingTask(null)}
+        onSave={handleSaveTask}
+      />
+
+      {/* 削除確認ダイアログ */}
+      <DeleteConfirm
+        isOpen={!!deletingTask}
+        onConfirm={handleDeleteConfirm}
+        onCancel={() => setDeletingTask(null)}
+        taskTitle={deletingTask?.title || ""}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* ヘッダー */}
         <header className="mb-8">
@@ -85,22 +101,6 @@ function App() {
           onToggleComplete={toggleComplete}
           sortConfig={sortConfig}
           onSort={sortTasks}
-        />
-
-        {/* タスク編集モーダル */}
-        <EditModal
-          task={editingTask}
-          isOpen={!!editingTask}
-          onClose={() => setEditingTask(null)}
-          onSave={handleSaveTask}
-        />
-
-        {/* 削除確認ダイアログ */}
-        <DeleteConfirm
-          isOpen={!!deletingTask}
-          onConfirm={handleDeleteConfirm}
-          onCancel={() => setDeletingTask(null)}
-          taskTitle={deletingTask?.title || ""}
         />
       </div>
     </div>

@@ -109,8 +109,8 @@ export function useTasks() {
       // 文字列と日付の比較
       if (typeof aValue === "string" && typeof bValue === "string") {
         return sortConfig.direction === "asc"
-          ? aValue.localeCompare(bValue)
-          : bValue.localeCompare(aValue);
+          ? aValue.localeCompare(bValue, "ja-JP", { sensitivity: "base" })
+          : bValue.localeCompare(aValue, "ja-JP", { sensitivity: "base" });
       }
 
       // その他の型の比較

@@ -9,7 +9,12 @@ interface TaskItemProps {
   onToggleComplete: (id: string) => void;
 }
 
-export function TaskItem({ task, onEdit, onDelete }: TaskItemProps) {
+export function TaskItem({
+  task,
+  onEdit,
+  onDelete,
+  onToggleComplete,
+}: TaskItemProps) {
   const priorityConfig = {
     low: { color: "text-green-700 bg-green-100", label: "🟢 低", icon: "🟢" },
     medium: {
@@ -47,6 +52,15 @@ export function TaskItem({ task, onEdit, onDelete }: TaskItemProps) {
         isCompleted ? "bg-gray-200 hover:bg-gray-300" : "hover:bg-blue-50"
       }`}
     >
+      <td className="px-6 py-4 whitespace-nowrap">
+        <input
+          type="checkbox"
+          checked={isCompleted}
+          onChange={() => onToggleComplete(task.id)}
+          className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer"
+          aria-label={`${task.title}を完了にする`}
+        />
+      </td>
       <td
         className={`px-6 py-4 ${
           isCompleted ? "line-through text-gray-600" : "text-gray-900"
