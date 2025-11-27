@@ -8,8 +8,8 @@ applications:
             - nvm install 24
             - nvm use 24
             - node --version
-            - cd amplify && npm ci && cd ..
-            - npm ci
+            - cd amplify && npm install && cd ..
+            - npm install
         build:
           commands:
             - npm run build
