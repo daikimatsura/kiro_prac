@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+task-manager/node_modules/
+task-manager/amplify/node_modules/
+
+# Build outputs
+task-manager/dist/
+task-manager/dist-ssr/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test results
+task-manager/test-results/
+task-manager/playwright-report/
+task-manager/.playwright/
+
+# Amplify
+amplify_outputs.json
+.amplify/
+
+# Local env files
+*.local
+.env
+.env.local
+.env.*.local
